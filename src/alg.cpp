@@ -59,12 +59,12 @@ string infx2pstfx(string inf) {
 }
 
 
-int calculate(int num1, int num2, char operation) {
+int calculate(int number1, int number2, char operation) {
     switch (operation) {
-    case '+': return num1 + num2;
-    case '-': return num1 - num2;
-    case '*': return num1 * num2;
-    case '/': return num1 / num2;
+    case '+': return number1 + number2;
+    case '-': return number1 - number2;
+    case '*': return number1 * number2;
+    case '/': return number1 / number2;
     default: return -1;
     }
 }
@@ -78,13 +78,13 @@ int eval(string pst) {
         if ( priority == -1)
             stack.push(ch - 48);
         else {
-            int  num1=stack.get();
+            int  number1=stack.get();
             stack.pop();
 
-            int num2 = stack.get();
+            int number2 = stack.get();
             stack.pop();
 
-            int result = calculate(num2, num1, ch);
+            int result = calculate(number2, number1, ch);
             stack.push(result);
         }
 
